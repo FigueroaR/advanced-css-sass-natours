@@ -1,6 +1,6 @@
 .row {
   max-width: $grid-width;
-  background-color: grey;
+  
   margin: 0 auto;
   margin-bottom: $gutter-vertical;
 
@@ -13,7 +13,7 @@
 
   // here we select attributes
   [class^="col-"] {
-    background-color: orange;
+    
     float: left;
 
     &:not(:last-child) {
