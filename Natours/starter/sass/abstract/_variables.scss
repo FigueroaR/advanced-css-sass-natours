@@ -11,6 +11,11 @@ $color-white: #fff;
 $color-black: #000;
 
 
+//Font SIZES
+//here below, this is the common size we use, this is not the true default, this is just a common size {html holds true font size its percetage is 1 rem, thats our reference} 
+$default-font-size: 1.6rem;
+
+
 //GRID
 $grid-width: 100rem;
 $gutter-vertical: 8rem;
