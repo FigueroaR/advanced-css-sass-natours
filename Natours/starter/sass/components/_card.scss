@@ -1,13 +1,14 @@
 .card {
+
+    //Funtionality 
     perspective: 150rem; //affects how we perceive the card
     -moz-perspective: 150rem; // for mozilla
-    position: relative;
-    height: 50rem;
+    position: relative; //coordinates of (0, 0) on parent left and right top corners / needed for children to know where to move
+    height: 52rem;
 
     &__side {
-      color: $color-white;
-      font-size: 2rem;
-      height: 50rem;
+      
+      height: 52rem;
       transition: all .5s ease;
       position: absolute;
       top: 0;
@@ -15,6 +16,7 @@
       width: 100%;
       backface-visibility: hidden;  // hides the back part of an element
       border-radius: .3rem;
+      overflow: hidden;
       box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 
       &--front {
@@ -32,10 +34,77 @@
     }
 
     &:hover &__side--front {
-      transform: rotateY(180deg);
+      transform: rotateY(-180deg);
     }
 
     &:hover &__side--back {
       transform: rotateY(0deg);
+    }
+
+    //Front side Styling
+    &__picture {
+      background-size: cover; //for all images 1 2 3
+      height: 23rem;
+      background-blend-mode: screen;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);;
+
+      &--1 {
+        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(../img/nat-5.jpg);
+      }
+
+      &--2 {
+        
+        background-image: url(../img/nat-5.jpg);
+      }
+
+      &--3 {
+        
+        background-image: url(../img/nat-5.jpg);
+      }
+    }
+
+    &__heading {
+      font-size: 2.8rem;
+      font-weight: 300;
+      text-transform: uppeercase;
+      text-align: right;
+      color: $color-white;
+      position: absolute;
+      top:  12rem;
+      right: 3rem;
+      width: 71%;
+    }
+
+    &__heading-span {
+      padding: 1rem 1.5rem;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+      &--1 {
+        background-image: linear-gradient(to right bottom, rgba( $color-secondary-light, .85), rgba( $color-secondary-dark, .85));
+
+
+      }
+    }
+
+    &__details {
+      padding: 3rem;
+
+      ul {
+        list-style: none;
+        width: 80%;
+        margin: 0 auto; //0 left and right, and auto for left and right, calculated by the browser
+
+        li{
+          text-align: center;
+          font-size: 1.5rem;
+          padding: 1rem;
+
+          &:not(:last-child) {
+            border-bottom: 1px solid $color-grey-light-2;
+          }
+        }
+      }
     }
 }
