@@ -6,7 +6,8 @@
     position: relative; //coordinates of (0, 0) on parent left and right top corners / needed for children to know where to move
     height: 52rem;
 
-    &__side {
+    //side is the back
+    &__side {   
       
       height: 52rem;
       transition: all .5s ease;
@@ -28,6 +29,14 @@
         
         &-1 {
           background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+        }
+
+        &-2 {
+          background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+        }
+
+        &-3 {
+          background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
         }
        
       }
@@ -55,13 +64,13 @@
       }
 
       &--2 {
-        
-        background-image: url(../img/nat-5.jpg);
+        background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url(../img/nat-6.jpg);
+        // background-image: url(../img/nat-5.jpg);
       }
 
       &--3 {
-        
-        background-image: url(../img/nat-5.jpg);
+        background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark), url(../img/nat-7.jpg);
+        // background-image: url(../img/nat-5.jpg);
       }
     }
 
@@ -83,8 +92,14 @@
       box-decoration-break: clone;
       &--1 {
         background-image: linear-gradient(to right bottom, rgba( $color-secondary-light, .85), rgba( $color-secondary-dark, .85));
+      }
 
+      &--2 {
+        background-image: linear-gradient(to right bottom, rgba( $color-primary-light, .85), rgba( $color-primary-dark, .85));
+      }
 
+      &--3 {
+        background-image: linear-gradient(to right bottom, rgba( $color-tertiary-light, .85), rgba( $color-tertiary-dark, .85));
       }
     }
 
