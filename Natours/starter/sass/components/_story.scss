@@ -25,7 +25,7 @@
     transform: translateX(-3rem) skewX(12deg); //here we tranform position ; to upright from accidental skew in shape (parent skew)
     position: relative;
     backface-visibility: hidden;
-   
+    overflow: hidden
   }
 
 
@@ -51,7 +51,7 @@
     text-align: center;
     opacity: 0;
     transition: all .5s;
-    backface-visibility: hidden;
+    
   }
 
   &:hover &__caption{
@@ -64,6 +64,6 @@
     
     transform: translateX(-4rem) scale(1);
     filter: blur(10px) brightness(80%);
-    
+    // overflow: hidden
   }
 }
