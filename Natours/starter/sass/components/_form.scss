@@ -14,6 +14,7 @@
     border-bottom: 3px solid transparent;
     width: 85%;
     display: block;
+    transition: all .3s;
 
     &::-webkit-input-placeholder {
       color: $color-grey-dark-2;  
@@ -32,8 +33,6 @@
       box-shadow: 0 1rem 2rem rgba($color-black, .1); // shadow: x 0, y 1rem, blur 2rem, and rgba(color)
       border-bottom: 3px solid $color-primary; 
     }
-
-
   }
 
   &__label {
@@ -52,5 +51,53 @@
     visibility: hidden; //serves when doing animations
     transform: translateY(-4rem); //label of input now travels
   }
+
+  &__radio-group {
+    width: 45%;
+    display: inline-block;
+  }
+
+  &__radio-input {
+    display: none;
+  }
+
+  &__radio-label {
+    font-size: $default-font-size;
+    cursor: pointer; //changed the arrow to a hand when choosing on form
+    position: relative; //parent element of the radio buttons
+    padding-left: 4.5rem; //paddding used to help off set costum radio button
+  }
   
+  &__radio-button {
+  height: 3rem;
+  width: 3rem;
+  border: 5px solid $color-primary;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: -.4rem; //helps move the radio button where we want it 
+
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1.3rem;
+      width: 1.3rem;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: $color-primary;
+      opacity: 0;
+      transition: all .2s;
+    }
+  }
+
+  // checked radio/ select sibling/ and its child
+  &__radio-input:checked ~ &__radio-label &__radio-button::after {
+    opacity: 1;
+
+  }
 }
