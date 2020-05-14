@@ -13,6 +13,8 @@
     border-radius: 50%;
     z-index: 2000;
     box-shadow: 0rem 1rem 3rem rgba($color-black, .2); //x y blur (color, %)
+    text-align: center; // this will put the text in line with circle for nav button
+    cursor: pointer; //shows hand pointing in stead of arrow
   }
 
   &__background {
@@ -92,17 +94,70 @@
     
   }
 
+  //FUNCTIONALITY
   // here we are saying, when we click the label or "check the box", then make the nav bigger 
   &__checkbox:checked ~ &__background {
       transform: scale(80);
-
   }
 
   &__checkbox:checked ~ &__nav {
-    
     opacity: 1; //keep the nav hidden no longer
     width: 100%;
-}
+  }
+
+  //ICON 
+  
+  &__icon {
+    position: relative;
+    margin-top: 3.5rem; // here we bring down the lines of icon top completely center it for nav button
+
+    &,
+    &::before, 
+    &::after {
+      width: 3rem;
+      height: 2px;
+      background-color: $color-grey-dark-3;
+      display: inline-block;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all .2s;;
+    }
+
+    //moving the lines top create good icon
+    &::before {top: -1rem;}
+    &::after {top: 1rem;}
+
+  }
+
+  //animating button o expand a bit 
+  &__button:hover &__icon::before {
+    top: -1.2rem;
+    
+  }
+
+  &__button:hover &__icon::after {
+    top: 1.2rem;
+  }
+  //when checkbox is check we select "brother" then child(icon) of the selected brother(button) 
+  // we remove the line in the middle
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+  }
+
+  &__checkbox:checked + &__button &__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  &__checkbox:checked + &__button &__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
 
 }
 
