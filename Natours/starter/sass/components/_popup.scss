@@ -1,0 +1,68 @@
+.popup {
+  height: 100vh;
+  width: 100%; //
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($color-black, .8);
+  z-index: 5000;
+
+  &__content {
+    @include absCenter;
+    
+    width: 75%;
+    background-color: $color-white;
+    box-shadow: 0 2rem 4rem rgba($color-black, .2);
+    border-radius: 3px;
+    display: table; //children are    display: table-cell;
+    overflow: hidden; //when our contetn fall out of its box, we hide the parts that overflow outside of its paramenters
+  }
+
+  &__left {
+    width: 33.333333%;
+    display: table-cell; //dependent on parent to be display:table
+    vertical-align: middle;
+    height: auto;
+  }
+
+  &__right {
+    width: 66.66667%;
+    display: table-cell; //dependent on parent to be display:table
+    vertical-align: middle;
+    padding: 3rem 5rem; //x y
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+
+    column-count: 2; // this will create 2 xolumns and split the test into them
+    column-gap: 4rem; // default gap size is 1em, 1em is = to curretn font size of block, 14px = 1.4rem
+    column-rule: 1px solid $color-grey-light-2; //a line that appear between both columns
+    -moz-column-count: 2; 
+    -moz-column-gap: 4rem; 
+    -moz-column-rule: 1px solid $color-grey-light-2; //this webkits can be automized with auto-prefixer
+    
+
+
+    -moz-hyphens: auto; //in case this browsers havent been updated, this will make the hyphen work
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+   
+  }
+
+  &__img {
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    // height: 10rem;
+    
+  }
+
+  // &__button {
+
+  // }
+
+}

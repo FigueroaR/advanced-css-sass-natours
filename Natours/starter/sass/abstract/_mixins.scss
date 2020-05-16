@@ -1,7 +1,18 @@
+
+//here we fix glitches in some effects
 @mixin clearfix {
     &::after {
       content: "";
       display: table;
       clear: both;
     }
+}
+
+
+//absolute center, element placement
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
