@@ -20,27 +20,35 @@
 /*
 MEDIA QUERIES MANAGER
 
- Desktop first
+ Desktop first:
  0- 600 phone  (max)
-
  600 - 900 table portarit (max)  
-
  900 - 1200 landscape table (max) 
  1200px to 1800 regular style is applied  (min)
  1800px + : big desktop (min)
-
- */
+*/
  
 //  @mixin respond-phone {
 //    @media (max-width: 600px) {@content};
 //  }  //this is what regularly happens, but we are going to use a better method/ look bellow // @if
 
 
- //Breakpoint argument choices: 
-//  -  phone 
-//  -  tab-port
+//                                  Breakpoint argument choices: 
 //  -  tab-land
+//  -  tab-port
+//  -  phone 
 //  -  big-desktop
+
+
+/*                           ORDER
+
+          base + typography 
+
+          general layout + grid
+
+          page layout + components 
+*/ 
+
 //1 em = 16px // rem will not work with our medai quieries/ we made 1 rem = to 10 px for better management of font size
 //for example 600px/16 px = 37.5 em font size
  @mixin respond($breakpoint){
