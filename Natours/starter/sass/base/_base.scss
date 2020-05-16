@@ -9,6 +9,23 @@ html {
   //this defines what 1 rem is
   font-size: 62.5%;
   /* we divide 10/16, 16being the default font-size in browsers, now we get 62.5% of the 100%(16px default) font */
+
+  @include respond(phone) {
+    font-size: 50%;
+  }
+
+  @include respond(tab-port) {
+    font-size: 65%;
+  }
+
+  @include respond(tab-land) {
+    font-size: 70%;
+  }
+
+  @include respond(big-desktop) {
+    font-size: 81%;
+  }
+
 }
 body {
   

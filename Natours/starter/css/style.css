@@ -6,6 +6,19 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+/*
+MEDIA QUERIES MANAGER
+
+ Desktop first
+ 0- 600 phone  (max)
+
+ 600 - 900 table portarit (max)  
+
+ 900 - 1200 landscape table (max) 
+ 1200px to 1800 regular style is applied  (min)
+ 1800px + : big desktop (min)
+
+ */
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -43,6 +56,18 @@ Dark green: #28b485
 html {
   font-size: 62.5%;
   /* we divide 10/16, 16being the default font-size in browsers, now we get 62.5% of the 100%(16px default) font */ }
+  @media (max-width: 500px) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 900px) {
+    html {
+      font-size: 65%; } }
+  @media (max-width: 1200px) {
+    html {
+      font-size: 70%; } }
+  @media (min-width: 1800px) {
+    html {
+      font-size: 81%; } }
 
 body {
   box-sizing: border-box; }
