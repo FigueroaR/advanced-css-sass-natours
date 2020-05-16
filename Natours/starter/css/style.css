@@ -54,20 +54,16 @@ MEDIA QUERIES MANAGER
   /* we inherist box-sizing from body */ }
 
 html {
-  font-size: 62.5%;
-  /* we divide 10/16, 16being the default font-size in browsers, now we get 62.5% of the 100%(16px default) font */ }
-  @media (max-width: 500px) {
+  font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
     html {
       font-size: 50%; } }
-  @media (max-width: 900px) {
+  @media (min-width: 112.5em) {
     html {
-      font-size: 65%; } }
-  @media (max-width: 1200px) {
-    html {
-      font-size: 70%; } }
-  @media (min-width: 1800px) {
-    html {
-      font-size: 81%; } }
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }

@@ -33,7 +33,7 @@ MEDIA QUERIES MANAGER
  
 //  @mixin respond-phone {
 //    @media (max-width: 600px) {@content};
-//  }  //this is what regularly happens, but we are going to use a better method
+//  }  //this is what regularly happens, but we are going to use a better method/ look bellow // @if
 
 
  //Breakpoint argument choices: 
@@ -41,20 +41,22 @@ MEDIA QUERIES MANAGER
 //  -  tab-port
 //  -  tab-land
 //  -  big-desktop
+//1 em = 16px // rem will not work with our medai quieries/ we made 1 rem = to 10 px for better management of font size
+//for example 600px/16 px = 37.5 em font size
  @mixin respond($breakpoint){
     @if $breakpoint == phone {
-        @media (max-width: 500px) {@content}; //max-width, things will scale only if screen is less than 600px and up to (max) of 600px
+      @media (max-width: 37.5em) { @content }; //max-width, things will scale only if screen is less than 600px and up to (max) of 600px
     };
 
     @if $breakpoint == tab-port {
-        @media (max-width: 900px) {@content};
+      @media (max-width: 56.25em) { @content }; // 900px/16px = 56.25em
     };
 
     @if $breakpoint == tab-land {
-        @media (max-width: 1200px) {@content};
+      @media (max-width: 75em) { @content }; // 1200px/16px = 75em   
     };
 
     @if $breakpoint == big-desktop {
-        @media (min-width: 1800px) {@content}; //so with min, it will only happen is screen is less that 1800px, else it wont happen
-      }; 
+        @media (min-width: 112.5em) { @content }; //1800px/16px  //so with min, it will only happen is screen is less that 1800px, else it wont happen
+    }; 
  }
