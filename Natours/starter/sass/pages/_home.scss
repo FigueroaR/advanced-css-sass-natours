@@ -1,9 +1,13 @@
 .section-about {
   background-color: $color-grey-light-1;
-  padding: 20rem 0;     // top and bottom padding
+  padding: 25rem 0;     // top and bottom padding
   // padding-top: 20rem;
   // padding-bottom: 10rem;  // can edit top or bottom space
   margin-top: -20vh;
+
+  @include respond(tab-port) {
+    padding: 20rem 0;
+  }
 }
 
 .section-features {
@@ -25,6 +29,11 @@
     & > * {
       transform: skewY(7deg);
     }
+
+    @include respond(tab-port) {
+      padding-top: 10rem;
+      padding-bottom: 5rem;
+    }
 }
 
 .section-tours {
@@ -33,6 +42,10 @@
   // padding-top: 20rem;
   // padding-bottom: 10rem;  // can edit top or bottom space
   margin-top: -10vh;
+
+  @include respond(tab-port) {
+    padding: 20rem 0 10rem 0;
+  }
 }
 
 
@@ -40,12 +53,20 @@
   position: relative;
   padding: 15rem 0;
   
+  @include respond(tab-port) {
+    padding: 10rem 0;
+  }
 }
 
 .section-book {
   
   padding: 15rem 0;
   background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+
+  @include respond(tab-port) {
+    padding: 10rem 0;
+  }
+
 }
 
 .book {

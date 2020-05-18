@@ -12,7 +12,10 @@
     
     text-align: center;
     margin: 5rem;
-    
+
+    @include respond(tab-port) {
+      margin-bottom: 4rem;
+    }
   }
 
   &__logo {
