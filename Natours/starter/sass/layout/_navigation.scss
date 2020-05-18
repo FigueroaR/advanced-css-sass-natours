@@ -15,6 +15,16 @@
     box-shadow: 0rem 1rem 3rem rgba($color-black, .2); //x y blur (color, %)
     text-align: center; // this will put the text in line with circle for nav button
     cursor: pointer; //shows hand pointing in stead of arrow
+
+    @include respond(tabl-port) {
+      top: 4rem;
+    right: 4rem; 
+    }
+
+    @include respond(phone) {
+      top: 3rem;
+      right: 3rem; 
+    }
   }
 
   &__background {
@@ -31,6 +41,16 @@
     //transition: transform .8s ease-out; //the animation that make the list items (options) appear
 
     // transform: scale(90); for testing purpose / when need to see the background of nav bar
+
+    @include respond(tabl-port) {
+      top: 4.5rem;
+      right: 4.5rem; 
+    }
+
+    @include respond(phone) {
+      top: 3.5rem;
+      right: 3.5rem; 
+    }
   }
 
   &__nav {
@@ -125,13 +145,12 @@
       content: "";
       position: absolute;
       left: 0;
-      transition: all .2s;;
+      transition: all .2s;
     }
 
     //moving the lines top create good icon
     &::before {top: -1rem;}
     &::after {top: 1rem;}
-
   }
 
   //animating button o expand a bit 
@@ -158,6 +177,8 @@
     top: 0;
     transform: rotate(-135deg);
   }
+
+  
 
 }
 

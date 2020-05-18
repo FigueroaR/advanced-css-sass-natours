@@ -27,6 +27,7 @@ html {
   // }
 
   @include respond(big-desktop) {
+    //width greater yhan 1800px??
     font-size: 75%; // of 16px is 12px font-size now
   }
 
