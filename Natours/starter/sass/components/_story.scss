@@ -8,10 +8,19 @@
   padding-left: 9rem;
   font-size: $default-font-size;
   transform: skew(-12deg); //here we tranform position ; to skew 
+  
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+  }
+
+  @include respond(phone) {
+    transform: skewX(0);
+  }
 
   & > * {
     transform: skewX(12deg);
-    
   }
 
   &__shape {
@@ -25,7 +34,11 @@
     transform: translateX(-3rem) skewX(12deg); //here we tranform position ; to upright from accidental skew in shape (parent skew)
     position: relative;
     backface-visibility: hidden;
-    overflow: hidden
+    overflow: hidden;
+
+    @include respond(phone) {
+      transform: translateX(-3rem) skewX(0); // translate and skew must be together, one transform: allow per block;
+    }
   }
 
 
@@ -38,6 +51,10 @@
 
   &__text {
     transform: skewX(12deg); //here we tranform position ; to upright from accidental skew in shape (parent skew)
+
+    @include respond(phone) {
+      transform: skewX(0); 
+    }
   }
 
   &__caption {
