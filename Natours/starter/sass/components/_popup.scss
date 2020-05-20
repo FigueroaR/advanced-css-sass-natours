@@ -12,6 +12,7 @@
   
   // here we are aksing the browser if it supports these attributes, if it does then execute what is in the block
   @supports(-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+    // sepia, brightness or invert, there are different settings for this backdrop filter
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     background-color: rgba($color-black, .3);

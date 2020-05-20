@@ -15,6 +15,7 @@
       top: 0;
       left: 0;
       width: 100%;
+      -webkit-backface-visibility: hidden; // here we add this webkit to work in conjuction with our @supports in the popup (graceful deprication)
       backface-visibility: hidden;  // hides the back part of an element
       border-radius: .3rem;
       overflow: hidden;
